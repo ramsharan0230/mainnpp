@@ -1,0 +1,40 @@
+.office-info{
+    padding: 25px 20px;
+  }
+  .office .office-info h5 {
+    color: #272F79;
+    font-weight: 700;
+  }
+  
+  .office .office-info p{
+    color: #272F79;
+  }
+
+  .office .office-image{
+      border-bottom: 5px solid red;
+  }
+
+  #hero .btn-member {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 7px 28px;
+    transition: 0.5s;
+    color: red;
+    background: #fff;
+    margin-right: 9px;
+}
+
+#hero .btn-office {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 7px 44px;
+    transition: 0.5s;
+    color: black;
+    background: #fff;
+}

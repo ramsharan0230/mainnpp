@@ -1,0 +1,13 @@
+.navbar-fixed-top,#left-sidebar{
+    background:#1e4491;
+}
+
+#left-sidebar .user-account .dropdown,.sidebar-nav .metismenu a,.sidebar-nav .metismenu .active .collapse a{
+    color: white;
+}
+.sidebar-nav .metismenu .active a{
+    color: #1e4491;
+}
+.navbar-nav .icon-menu i{
+   color: #3eacff;
+}

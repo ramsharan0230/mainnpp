@@ -1,0 +1,46 @@
+.about .membership-tab ul li{
+    font-size: 14px;
+    color: #272D79;
+    font-weight: 500;
+    border-bottom: 5px solid #272D79;
+}
+
+.about .membership-tab  .nav-link.active {
+    color: #fff;
+    background-color: #272D79;
+    border-radius: 0px;
+}
+
+ .office-tab  .nav-link.active {
+    color: red;
+    background-color: white;
+    border-radius: 0px;
+}
+
+
+#hero .btn-member {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 7px 28px;
+    transition: 0.5s;
+    color: red;
+    background: #fff;
+    margin-right: 9px;
+}
+
+#hero .btn-office {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 7px 44px;
+    transition: 0.5s;
+    color: black;
+    background: #fff;
+}
+
+

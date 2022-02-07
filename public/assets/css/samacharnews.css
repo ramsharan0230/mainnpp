@@ -1,0 +1,226 @@
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+    width: 100%;
+    height: 60vh;
+    background: url("../img/aboutbanner.png") top left;
+    background-size: cover;
+    position: relative;
+    /* border-bottom: 10px solid red; */
+  }
+  
+  #hero:before {
+    content: "";
+    background: rgba(26, 35, 135, 0.8);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #hero .container {
+    position: relative;
+    /* padding-top: 132px; */
+  }
+  
+  /* @media (max-width: 992px) {
+    #hero .container {
+      padding-top: 58px;
+    }
+  } */
+  
+
+  
+  #hero h1 {
+    margin: 0;
+    font-size: 41px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #fff;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #hero {
+      height: 100vh;
+    }
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+  
+  @media (max-height: 500px) {
+    #hero {
+      height: 120vh;
+    }
+  }
+
+  .about .content-right h6 {
+    color: #fff;
+    background: red;
+    width: 38px;
+    height: 47px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 11px;
+    margin-right: 18px;
+}
+
+.about .content-right p {
+ font-size: 19px;
+}
+
+
+.about .intro-title{
+  font-size: 27px;
+  color: #272D79;
+
+}
+
+.about .news-article img{
+  margin-bottom: 19px;
+}
+.about .about-intro p{
+  font-size: 15px;
+  line-height: 29px;
+  text-align: justify;
+}
+
+.entry-meta ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.entry-meta ul  li{
+ padding: 0px 4px;
+ color: grey;
+}
+
+.entry-meta i {
+  font-size: 14px;
+  padding-right: 4px;
+  color: grey;
+}
+
+.entry-meta a {
+  color: red;
+  font-size: 14px;
+  display: inline-block;
+  line-height: 1;
+}
+
+  
+/*--------------------------------------------------------------
+# further-program
+--------------------------------------------------------------*/
+.further-program .title{
+  color: red;
+}
+
+.further-program .image-text-wrapper{
+  height: 104px;
+  /* padding: 18px; */
+  background: #fff;
+  position: relative;
+  /* top: 95px; */
+  bottom: 48px;
+  left: 15px;
+  width: 251px;
+  border-bottom: 4px solid red;
+}
+
+.program-info h6{
+  color: red;
+}
+.program-info p{
+  color: #272F79;
+}
+.further-program .btn-read-more{
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 23px;
+  font-size: 14px;
+  
+}
+
+.history-gallery h6{
+  color: red;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.history-gallery .news_list li {
+  margin-top: 10px;
+  list-style: none;
+  font-size: 16px;
+}
+
+.history-gallery .news_list li a {
+  color: #272F79;
+}
+
+.program-info{
+  padding-top: 19px;
+}
+
+
+.further-program .owl-nav button {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+.further-program .owl-nav button.owl-prev {
+  right: 0px;
+ 
+}
+
+.further-program .owl-nav button.owl-next {
+  right: -17px;
+}
+
+
+
+.further-program .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.further-program .owl-nav button span {
+  font-size: 20px;    
+  position: relative;
+  bottom: 200px;
+  font-weight: 500;
+  right: 20px;
+  color: #000;
+  
+  
+}
+.further-program .owl-nav button:focus {
+  outline: none;
+}
+
+.further-program-info{
+  padding: 25px 20px;
+}
+.further-program .further-program-info h5 {
+  color: #272F79;
+  font-weight: 700;
+}
+
+.further-program .further-program-info p{
+  color: #272F79;
+}
