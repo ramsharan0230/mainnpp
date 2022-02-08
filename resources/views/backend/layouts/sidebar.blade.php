@@ -35,16 +35,14 @@
                     </ul>
                 </li>
 
-                {{-- Press Release --}}
-                <li class="{{request()->is('admin/press_releases') ? 'active' : ''}}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-home"></i><span>Press Release</span> </a>
+                {{-- Online Library --}}
+                <li class="{{request()->is('admin/online-libraries') ? 'active' : ''}}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-home"></i><span>Online Library</span> </a>
                     <ul>
-                        <li><a href="{{route('welcome')}}">Welcome Section</a></li>
-                        <li><a href="{{route('chairman.message')}}">Chairman Message</a></li>
-                         <li><a href="{{route('goal.index')}}">Press Bigyapti</a></li>
-                         <li><a href="{{route('rule.index')}}">Niyam</a></li>
+                        <li><a href="{{route('online-libraries.index')}}">Lists</a></li>
+                        <li><a href="{{route('online-libraries.create')}}">Add Library</a></li>
                     </ul>
                 </li>
-                {{-- end Press Release --}}
+                {{-- end Online Library --}}
 
 {{--                <li class="{{request()->is('admin/news*') || request()->is('admin/event') ? 'active' : ''}}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-home"></i><span>News And Events</span> </a>--}}
 {{--                    <ul>--}}

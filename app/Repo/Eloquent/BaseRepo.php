@@ -110,6 +110,17 @@ class BaseRepo implements BaseInterface
             });
         }
 
+        if (isset($parameter["type"]) && ($parameter["type"]=='news' || $parameter["type"]=='event')) {
+            
+            $filterByType = $parameter["type"];
+            if($filterByType=='news')
+                $type =1;
+            if($filterByType=='event')
+                $type=0;
+
+            $data = $data->where('news', $type);
+        }
+
         return $data->orderBy($orderByColumn, $parameter["sort_by"])->paginate($parameter["limit"])->withPath($path)->appends($parameter);
     }
 

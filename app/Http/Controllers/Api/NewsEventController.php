@@ -19,11 +19,20 @@ class NewsEventController extends Controller
         $this->newsEvent = $newsEvent;
     }
 
+    public function RemoveSpecialChar($str) {
+  
+        $res = str_replace( array( '\'', '"',
+        ',' , ';', '<', '>','@', '!', ')', '(', '$'), ' ', $str);
+
+        return $res;
+    }
+
     public function index(Request $request){
         try {
             $sortBy = $request->get("sort_by", "desc");
             $sortField = $request->get("sort_field");
             $limit = $request->get("limit", 10);
+
             try {
                 $this->validate($request, [
                     "filter_field" => "sometimes|string",
@@ -49,7 +58,7 @@ class NewsEventController extends Controller
             } catch (\Exception $ex) {
                 $limit = 10;
             }
-            
+            // dd($request->except('search'));
             $parameter = $request->all();
             $parameter["sort_by"] = $sortBy;
             $parameter["sort_field"] = $sortField;

@@ -52,7 +52,7 @@ class NewsEventController extends Controller
                 $data['banner']='storage/backend/assets/images/news/'.$imageName;
             }
         }
-        $data['slug'] = Str::slug($request->title, '-');
+        $data['slug'] = Str::slug($request->title, '_');
 
         $status=NewsEvent::create($data);
         if($status){

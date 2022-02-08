@@ -22,13 +22,12 @@ Route::group(['prefix'=>'admin','middleware'=>['admin']],function(){
     Route::get('principle-message',[\App\Http\Controllers\AdminController::class,'principleMessage'])->name('principle.message');
     Route::post('principle-message',[\App\Http\Controllers\AdminController::class,'principleMessageUpdate'])->name('principle.message.update');
 
-
-    //press release
-    Route::resource('/press_releases',\App\Http\Controllers\PressReleaseController::class);
-
     // Chairman Message
     Route::get('chairman-message',[\App\Http\Controllers\AdminController::class,'chairmanMessage'])->name('chairman.message');
     Route::post('chairman-message',[\App\Http\Controllers\AdminController::class,'chairmanMessageUpdate'])->name('chairman.message.update');
+
+    // Online Library
+    Route::resource('online-libraries', \App\Http\Controllers\OnlineLibraryController::class);
 
   // Staff Section
     Route::resource('/staff',\App\Http\Controllers\StaffController::class);

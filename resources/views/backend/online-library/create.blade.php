@@ -36,31 +36,47 @@
                                 <div class="row clearfix">
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="">Full name <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder="eg. Full name" name="name" value="{{old('name')}}">
+                                            <label for="">Title <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" placeholder="eg. Title" name="title" value="{{old('title')}}">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="">Designation </label>
-                                            <input type="text" class="form-control" placeholder="eg. Designation" name="designation" value="{{old('designation')}}">
+                                            <label for="">Subtitle </label>
+                                            <input type="text" class="form-control" placeholder="eg. Subtitle" name="subtitle" value="{{old('subtitle')}}">
                                         </div>
                                     </div>
+
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="">Profile</label>
-                                            <input type="file" name="profile" class="dropify" id="input-file-now" data-height="100" data-default-file="{{old('profile')}}">
+                                            <label for="date">Published Date<span class="text-danger">*</span></label>
+                                            <input type="date" class="form-control" id="date" placeholder="eg. Subtitle" name="pulished_at" >
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="thumbnail">Thumbnail</label>
+                                            <input type="file" name="thumbnail" class="dropify" id="input-file-now" data-height="100" data-default-file="{{old('thumbnail')}}">
                                         </div>
                                     </div>
 
 
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="">Review <span class="text-danger">*</span></label>
-                                            <textarea type="text" class="form-control description" placeholder="Write review..." name="review">{{old('review')}}</textarea>
-                                        </div>
+                                            <label for="">File(pdf) <span class="text-danger">*</span></label>
+                                            <input type="file" name="file" class="dropify" id="input-file-now" data-height="100" data-default-file="{{old('file')}}">
+                                        </div>                                   
                                     </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Description <span class="text-danger">*</span></label>
+                                            <textarea type="text" class="form-control description" placeholder="Write description..." name="description">{{old('description')}}</textarea>
+                                        </div>                                       
+                                    </div>
+                                    
 
 
                                     <div class="col-lg-12 col-sm-12">

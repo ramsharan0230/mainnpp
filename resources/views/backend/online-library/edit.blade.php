@@ -6,11 +6,11 @@
             <div class="block-header">
                 <div class="row">
                     <div class="col-lg-6 col-md-8 col-sm-12">
-                        <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a>Add Library</h2>
+                        <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a>Edit Library</h2>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('admin')}}"><i class="icon-home"></i></a></li>
                             <li class="breadcrumb-item">Library</li>
-                            <li class="breadcrumb-item active">Add Library</li>
+                            <li class="breadcrumb-item active">Edit Library</li>
                         </ul>
                     </div>
                 </div>
@@ -19,61 +19,73 @@
             <div class="row clearfix">
                 <div class="col-md-12">
                     @if($errors->any())
-                       <div class="alert alert-danger">
-                           <ul>
-                               @foreach($errors->all() as $error)
-                                   <li>{{$error}}</li>
-                               @endforeach
-                           </ul>
-                       </div>
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="body">
-                            <form action="{{route('online-libraries.store')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('online-libraries.update', $library->id)}}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                @method('patch')
                                 <div class="row clearfix">
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="">Full name <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder="eg. Full name" name="name" value="{{old('name')}}">
+                                            <label for="">Title <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" placeholder="eg. Title" name="title" value="{{$library->title}}">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="">Designation </label>
-                                            <input type="text" class="form-control" placeholder="eg. Designation" name="designation" value="{{old('designation')}}">
+                                            <label for="">Subtitle <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" placeholder="eg. Subtitle" name="subtitle" value="{{$library->subtitle}}">
                                         </div>
                                     </div>
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="form-group">
-                                            <label for="">Profile</label>
-                                            <input type="file" name="profile" class="dropify" id="input-file-now" data-height="100" data-default-file="{{old('profile')}}">
-                                        </div>
-                                    </div>
-
 
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <label for="">Review <span class="text-danger">*</span></label>
-                                            <textarea type="text" class="form-control description" placeholder="Write review..." name="review">{{old('review')}}</textarea>
+                                            <label for="date">Published at<span class="text-danger">*</span></label>
+                                            <input type="date" class="form-control" id="date" name="pulished_at" value="{{ $library->pulished_at }}">
                                         </div>
                                     </div>
 
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="thumbnail">Thumbnail</label>
+                                            <input type="file" name="thumbnail" class="dropify" id="input-file-now" data-height="100" data-default-file="{{asset($library->thumbnail)}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="">File(pdf) <span class="text-danger">*</span></label>
+                                            <input type="file" name="file" class="dropify" id="input-file-now" data-height="100" data-default-file="{{asset($library->file)}}">
+                                        </div>                                   
+                                    </div>
+                                    
+                                     <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Description </label>
+                                            <input type="text" class="form-control" placeholder="eg. Description" name="description" value="{{$library->description}}">
+                                        </div>
+                                    </div>
 
                                     <div class="col-lg-12 col-sm-12">
                                         <label for="status">Status</label>
                                         <select name="status" class="form-control show-tick">
-                                            <option value="active" {{old('status')=='active' ? 'selected' : ''}}>Active</option>
-                                            <option value="inactive" {{old('status') == 'inactive' ? 'selected' : ''}} >Inactive</option>
+                                            <option value="active" {{$library->status=='active' ? 'selected' : ''}}>Active</option>
+                                            <option value="inactive" {{$library->status == 'inactive' ? 'selected' : ''}} >Inactive</option>
                                         </select>
                                     </div>
-
-
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                         <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                                     </div>
                                 </div>
