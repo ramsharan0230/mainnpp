@@ -44,6 +44,14 @@
                 </li>
                 {{-- end Online Library --}}
 
+                 {{-- Online Library --}}
+                 <li class="{{request()->is('admin/history') ? 'active' : ''}}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-home"></i><span>History</span> </a>
+                    <ul>
+                        <li><a href="{{route('history.index')}}">Index</a></li>
+                    </ul>
+                </li>
+                {{-- end Online Library --}}
+
 {{--                <li class="{{request()->is('admin/news*') || request()->is('admin/event') ? 'active' : ''}}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-home"></i><span>News And Events</span> </a>--}}
 {{--                    <ul>--}}
 {{--                        <li><a href="{{route('news.index')}}">News</a></li>--}}

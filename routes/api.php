@@ -161,4 +161,11 @@ Route::get('/galleries', [\App\Http\Controllers\Api\GalleryController::class, 'i
 Route::get('/gallery/{slug}', [\App\Http\Controllers\Api\GalleryController::class, 'getSpacificGalleryBySlug']);
 Route::get('/news-events', [\App\Http\Controllers\Api\NewsEventController::class, 'index']);
 Route::get('/news-events/{slug}', [\App\Http\Controllers\Api\NewsEventController::class, 'getSpacificNewsEventBySlug']);
+Route::get('/press-releases', [\App\Http\Controllers\Api\PressReleaseController::class, 'index']);
+Route::get('/press-releases/{slug}', [\App\Http\Controllers\Api\PressReleaseController::class, 'getSpacificPressReleaseBySlug']);
+Route::get('/online-libraries', [\App\Http\Controllers\Api\OnlineLibraryController::class, 'index']);
+Route::get('/online-libraries/{slug}', [\App\Http\Controllers\Api\OnlineLibraryController::class, 'getSpacificLibraryBySlug']);
+Route::get('/history', [\App\Http\Controllers\Api\HistoryController::class, 'getHistory']);
+Route::get('/history-images', [\App\Http\Controllers\Api\HistoryController::class, 'historyImage']);
+
 

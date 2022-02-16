@@ -13,8 +13,10 @@ Route::get('career',[\App\Http\Controllers\Frontend\IndexController::class,'care
 Route::get('contact-us',[\App\Http\Controllers\Frontend\IndexController::class,'contactUs'])->name('contact.us');
 
 //about us
-Route::get('about-us',[\App\Http\Controllers\Frontend\IndexController::class,'aboutUs'])->name('about.us');
-Route::get('history',[\App\Http\Controllers\Frontend\IndexController::class,'history'])->name('history');
+Route::get('about-us',[\App\Http\Controllers\Frontend\IndexController::class, 'aboutUs'])->name('about.us');
+Route::get('history',[\App\Http\Controllers\Frontend\IndexController::class, 'history'])->name('history');
+Route::get('/history-detail/{slug}', [\App\Http\Controllers\Frontend\IndexController::class, 'historyDetail'])->name('history-detail');
+
 Route::get('office',[\App\Http\Controllers\Frontend\IndexController::class,'office'])->name('office');
 Route::get('message-from-principal',[\App\Http\Controllers\Frontend\IndexController::class,'messagePrinciple'])->name('message.principle');
 Route::get('message-from-chairman',[\App\Http\Controllers\Frontend\IndexController::class,'messageChairman'])->name('message.chairman');

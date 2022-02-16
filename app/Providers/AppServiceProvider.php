@@ -17,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repo\GalleryInterface', 'App\Repo\Eloquent\GalleryRepo');
         $this->app->bind('App\Repo\NewsEventInterface', 'App\Repo\Eloquent\NewsEventRepo');
         $this->app->bind('App\Repo\MemberInterface', 'App\Repo\Eloquent\MemberRepo');
+        $this->app->bind('App\Repo\PressReleaseInterface', 'App\Repo\Eloquent\PressReleaseRepo');
+        $this->app->bind('App\Repo\OnlineLibraryInterface', 'App\Repo\Eloquent\OnlineLibraryRepo');
+        $this->app->bind('App\Repo\HistoryInterface', 'App\Repo\Eloquent\HistoryRepo');
+        $this->app->bind('App\Repo\HistoryImageInterface', 'App\Repo\Eloquent\HistoryImageRepo');
     }
 
     /**

@@ -22,6 +22,10 @@ Route::group(['prefix'=>'admin','middleware'=>['admin']],function(){
     Route::get('principle-message',[\App\Http\Controllers\AdminController::class,'principleMessage'])->name('principle.message');
     Route::post('principle-message',[\App\Http\Controllers\AdminController::class,'principleMessageUpdate'])->name('principle.message.update');
 
+    // History
+    Route::resource('/history', \App\Http\Controllers\HistoryController::class);
+    Route::resource('/history-image', \App\Http\Controllers\HistoryGalleryController::class);
+
     // Chairman Message
     Route::get('chairman-message',[\App\Http\Controllers\AdminController::class,'chairmanMessage'])->name('chairman.message');
     Route::post('chairman-message',[\App\Http\Controllers\AdminController::class,'chairmanMessageUpdate'])->name('chairman.message.update');

@@ -13,6 +13,8 @@ use App\Models\BlogTag;
 use App\Models\BrainTape;
 use App\Models\Brand;
 use App\Models\BTag;
+use App\Models\History;
+use App\Models\HistoryImage;
 use App\Models\BusinessModel;
 use App\Models\Category;
 use App\Models\Display;
@@ -20,7 +22,6 @@ use App\Models\Donate;
 use App\Models\FAQ;
 use App\Models\Gallery;
 use App\Models\Media;
-use App\Models\History;
 use App\Models\HomeTech;
 use App\Models\HomeTechCat;
 use App\Models\Industry;
@@ -86,8 +87,17 @@ class IndexController extends Controller
 
     //history
     public function history(){
-        return view('frontend.pages.aboutus.history');
+        $history = History::where('status', 'active')->first();
+        $historyImages = HistoryImage::where('status', 'active')->get();
+        return view('frontend.pages.aboutus.history', compact('history', 'historyImages'));
     }
+
+     //history Detail
+     public function historyDetail($slug){
+        $history = History::where('slug', $slug)->first();
+        return view('frontend.pages.aboutus.history-detail', compact('history'));
+    }
+
     //office
     public function office(){
         return view('frontend.pages.office');
