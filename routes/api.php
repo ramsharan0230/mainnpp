@@ -167,5 +167,7 @@ Route::get('/online-libraries', [\App\Http\Controllers\Api\OnlineLibraryControll
 Route::get('/online-libraries/{slug}', [\App\Http\Controllers\Api\OnlineLibraryController::class, 'getSpacificLibraryBySlug']);
 Route::get('/history', [\App\Http\Controllers\Api\HistoryController::class, 'getHistory']);
 Route::get('/history-images', [\App\Http\Controllers\Api\HistoryController::class, 'historyImage']);
+Route::get('/history-images/{slug}', [\App\Http\Controllers\Api\HistoryController::class, 'getSpacificHistoryImageBySlug']);
+
 
 

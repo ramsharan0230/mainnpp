@@ -118,20 +118,15 @@ class HistoryController extends Controller
     public function getSpacificHistoryImageBySlug($slug)
     {
         try {
-            $gallery = $this->gallery->getHistoryImageBySlug($slug);
+            $image = $this->historyImage->getHistoryImageBySlug($slug);
             
-            if($gallery)
-                $media = Media::where(['gallery_id'=>$gallery->id, 'publish'=>1])->orderBy('created_at', 'DESC')->get();
-            else
-                $media = [];
-                
             return response()->json([
                 "status" => "200",
-                "payload" => $media
+                "payload" => $image
             ], 200);
 
         } catch (ModelNotFoundException $ex) {
-            Log::info("Gallery Display", [
+            Log::info("Image Display", [
                 "status" => "404",
                 "message" => "No Record Found",
                 "slug" => $slug
@@ -141,7 +136,7 @@ class HistoryController extends Controller
                 "message" => "No record found"
             ], 404);
         } catch (\Exception $ex) {
-            Log::error("Gallery Display", [
+            Log::error("Image Display", [
                 'status' => " 500",
                 'message' =>serialize($ex->getMessage()),
                 "slug" => $slug
