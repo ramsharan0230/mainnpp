@@ -9,13 +9,17 @@
 
 {{--                <li><a href="{{route('our.team')}}">सांगठनिक संरचना</a></li>--}}
 {{--                <li><a href="{{route('message.chairman')}}">केन्द्रीय विभाग प्रमुख</a></li>--}}
-{{--                <!--<li><a href="{{route('message.principle')}}"> Message from Principal</a></li>-->--}}
-                <li><a href="{{route('news.event')}}">प्रेस विज्ञप्ति</a></li>
-                 <li><a href="press-release">सूचना/ समाचार</a></li>
-                  <li><a href="rules">पार्टी नियमावली</a></li>
-                   <li><a href="#">खुला बहस</a></li>
-                   <li><a href="#">अनलाइन संग्रहालय</a></li>
-                   <li><a href="#">अनलाइन लाइब्रेरी</a></li>
+{{--                <!--
+    <li><a href="#">खुला बहस</a></li>
+    <li><a href="{{route('message.principle')}}"> Message from Principal</a></li>
+-->--}}
+
+
+                <li><a href="{{ route('press.release') }}">प्रेस विज्ञप्ति</a></li>
+                 <li><a href="{{ route('news.event') }}">सूचना/ समाचार</a></li>
+                  <li><a href="{{ route('rules.list') }}">पार्टी नियमावली</a></li>
+                   <li><a href="{{ route('online-collections') }}">अनलाइन संग्रहालय</a></li>
+                   <li><a href="{{ route('online-libraries') }}">अनलाइन लाइब्रेरी</a></li>
 
             </ul>
         </li>

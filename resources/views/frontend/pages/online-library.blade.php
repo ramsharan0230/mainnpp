@@ -81,10 +81,10 @@
                                     <a href=""> {{$release->title}}</a>
                                 </h4>
                                 <p class="news-articles">
-                                    {{\Illuminate\Support\Str::limit($release->content, 60, $end='...')}}
+                                    {!! \Illuminate\Support\Str::limit($release->content, 60, $end='...') !!}
                                 </p>
                                 <div class="read-more">
-                                    <a href="{{route('press_release', $release->slug)}}" class="btn-learn-more">थप पढ्नुहोस्
+                                    <a href="{{route('rule.detail', $release->slug)}}" class="btn-learn-more">थप पढ्नुहोस्
                                         <i class="icofont-double-right"></i>
                                     </a>
                                 </div>
