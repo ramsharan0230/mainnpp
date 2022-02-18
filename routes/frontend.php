@@ -71,6 +71,9 @@ Route::get('rule-detail/{slug}',[\App\Http\Controllers\Frontend\IndexController:
 Route::get('online-libraries',[\App\Http\Controllers\Frontend\IndexController::class,'onlineLibrary'])->name('online-libraries');
 Route::get('online-libraries/{slug}',[\App\Http\Controllers\Frontend\IndexController::class,'onlineLibraryDetail'])->name('online-libraries.detail');
 
+//Online colletion(sangrahalaya)
+Route::get('online-collections',[\App\Http\Controllers\Frontend\IndexController::class,'onlineCollection'])->name('online-collections');
+
 //press bigyapti
 Route::get('press-release',[\App\Http\Controllers\Frontend\IndexController::class,'pressRelease'])->name('press.release');
 

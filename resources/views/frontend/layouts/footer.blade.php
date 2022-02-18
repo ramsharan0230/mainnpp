@@ -6,8 +6,7 @@
                     <img src="assets/img/footerlogo.png" alt="" class="img-fluid mb-3" style="height:66px">
                     <h3>नेश्नलिस्ट  पिपल्स पार्टी  </h3>
                     <p>
-                       केन्द्रीय कार्यालय,
- काठमाडौं, नेपाल<br>
+                       केन्द्रीय कार्यालय,काठमाडौं, नेपाल<br>
                         <strong>फोन: </strong>+977-1-4425877   <br>
                         <strong>मोबाइल </strong>: +977 9869086311  <br>
                         <strong>ईमेल:</strong> info@nppnepal.org<br>
@@ -27,10 +26,10 @@
                 <div class="col-lg-4 col-md-6 footer-links">
                     <h4>महत्वपूर्ण लिङ्कहरू</h4>
                     <ul>
-                        <li> <a href="#">गृहपृष्ठ</a></li>
+                        <li> <a href="{{ route('home') }}">गृहपृष्ठ</a></li>
                         <li> <a href="#">नेतृत्व</a></li>
-                        <li> <a href="#">इतिहास</a></li>
-                        <li> <a href="#">महत्वपूर्ण भिडियोहरु</a></li>
+                        <li> <a href="{{ route('history') }}">इतिहास</a></li>
+                        <li> <a href="{{ route('video.gallery') }}">महत्वपूर्ण भिडियोहरु</a></li>
                     </ul>
                 </div>
 

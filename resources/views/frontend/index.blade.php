@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="services-box" style="background: #329ED5;">
-                               <a href="#"> <h4>अनलाइन संग्रहालय</h4> </a>
+                               <a href="{{ route('online-collections') }}"> <h4>अनलाइन संग्रहालय</h4> </a>
                             </div>
                         </div>
                         <div class="col-lg-4">

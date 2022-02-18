@@ -534,4 +534,12 @@ class IndexController extends Controller
         return view('frontend.pages.online-library-detail', compact(['onlineLibrary']));
     }
 
+    //online collections
+    public function onlineCollection(){
+        $photoGalleries = Gallery::where('gallery_type','photo')->orderBy('id','DESC')->get();
+        $videoGalleries = Gallery::where('gallery_type','video')->orderBy('id','DESC')->get();
+        
+        return view('frontend.pages.collections', compact(['photoGalleries', 'videoGalleries']));
+    }
+
 }
