@@ -40,6 +40,7 @@ use App\Models\SuccessStory;
 use App\Models\Technology;
 use App\Models\Testimonial;
 use App\Models\Vacancy;
+use App\Models\OnlineLibrary;
 use App\Models\VacancyApplication;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
@@ -510,7 +511,7 @@ class IndexController extends Controller
     {
         $pressrelease = Rules::orderBy('id','DESC')->get();
         return view('frontend.pages.press_release',compact('pressrelease'));
-     }
+    }
 
     public function ruleDetail($slug)
     {
@@ -520,6 +521,17 @@ class IndexController extends Controller
                    
         return view('frontend.pages.press',compact('press'));
 
+    }
+
+    public function onlineLibrary(){
+        $onlineLibraries = OnlineLibrary::orderBy('id','DESC')->where('status', 'active')->get();
+        $pressreleases = Rules::orderBy('id','DESC')->get();
+        return view('frontend.pages.online-library', compact(['onlineLibraries', 'pressreleases']));
+    }
+
+    public function onlineLibraryDetail($slug){
+        $onlineLibrary = OnlineLibrary::where('slug', $slug)->first();
+        return view('frontend.pages.online-library-detail', compact(['onlineLibrary']));
     }
 
 }

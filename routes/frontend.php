@@ -67,6 +67,10 @@ Route::get('news-detail/{id}',[\App\Http\Controllers\Frontend\IndexController::c
 Route::get('rules',[\App\Http\Controllers\Frontend\IndexController::class,'Ruleslist'])->name('rules.list');
 Route::get('rule-detail/{slug}',[\App\Http\Controllers\Frontend\IndexController::class,'ruleDetail'])->name('rules.detail');
 
+//Online Library
+Route::get('online-libraries',[\App\Http\Controllers\Frontend\IndexController::class,'onlineLibrary'])->name('online-libraries');
+Route::get('online-libraries/{slug}',[\App\Http\Controllers\Frontend\IndexController::class,'onlineLibraryDetail'])->name('online-libraries.detail');
+
 //press bigyapti
 Route::get('press-release',[\App\Http\Controllers\Frontend\IndexController::class,'pressRelease'])->name('press.release');
 

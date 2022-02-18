@@ -92,7 +92,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="services-box" style="background: #EE7229;">
-                               <a href="#"> <h4>अनलाइन लाइब्रेरी</h4> </a>
+                               <a href="{{ route('online-libraries') }}"> <h4>अनलाइन लाइब्रेरी</h4> </a>
                             </div>
                         </div>
                     </div>
@@ -159,9 +159,9 @@
                                     <img src="assets/img/suchanaimage.png" alt="suchana_image" class="img-fluid">
                                     <div class="news-content">
                                         <div class="news-title mt-3">
-                                            <h2 class="">सूचना तथा समाचार</h2>
+                                            <a href="{{ route('news.event') }}"><h2 class="">सूचना तथा समाचार</h2></a>
                                         </div>
-                                        <div class="div news_list">
+                                        {{-- <div class="div news_list">
                                             @foreach($news as $key=>$newsletter)
 
                                                 <li class="">
@@ -184,13 +184,13 @@
                                                 @if($key == 2) @break @endif
 
                                             @endforeach
-                                        </div>
+                                        </div> --}}
                                         <!--news list-->
-                                        <div class="read-more d-flex justify-content-end mt-3">
+                                        {{-- <div class="read-more d-flex justify-content-end mt-3">
                                             <a href="#" class="btn-learn-more">थप पढ्नुहोस्
                                                 <i class="icofont-double-right"></i>
                                             </a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     <!--news content-->
                                 </div>
@@ -203,9 +203,10 @@
                                     <img src="assets/img/press.png" alt="press_image" class="img-fluid">
                                     <div class="news-content">
                                         <div class="news-title mt-3">
-                                            <h2 class="">प्रेस विज्ञप्ती </h2>
+                                            {{-- <h2 class="">प्रेस विज्ञप्ती </h2> --}}
+                                            <a href="{{ route('press.release') }}"> <h2>प्रेस विज्ञप्ती</h2> </a>
                                         </div>
-                                        <div class="div news_list">
+                                        {{-- <div class="div news_list">
                                             @foreach($goals as $key=>$goal)
 
                                             <li class="">
@@ -227,29 +228,8 @@
                                             </li>
                                                 @if($key == 2) @break @endif
                                             @endforeach
-{{--                                            <li class="">--}}
-{{--                                                <a href="" class="">--}}
-{{--                                                    नेपाल कम्युनिष्ट पार्टी (नेकपा) केन्द्रीय<br>--}}
-{{--                                                    सचिवालयको ३१औं बैठक निर्णयहरु--}}
-{{--                                                    <i class="icofont-rounded-right float-right"></i>--}}
-{{--                                                </a>--}}
-{{--                                                <div class="views-field views-field-created">--}}
-{{--                                                    <span class="views-label views-label-created">Post date: </span>--}}
-{{--                                                    <span class="field-content"><em class="placeholder">2 days 21 hours</em> ago</span>--}}
-{{--                                                </div>--}}
-{{--                                            </li>--}}
-{{--                                            <li class="">--}}
-{{--                                                <a href="" class="">--}}
-{{--                                                    नेपाल कम्युनिष्ट पार्टी (नेकपा) केन्द्रीय<br>--}}
-{{--                                                    सचिवालयको ३१औं बैठक निर्णयहरु--}}
-{{--                                                    <i class="icofont-rounded-right float-right"></i>--}}
-{{--                                                </a>--}}
-{{--                                                <div class="views-field views-field-created">--}}
-{{--                                                    <span class="views-label views-label-created">Post date: </span>--}}
-{{--                                                    <span class="field-content"><em class="placeholder">2 days 21 hours</em> ago</span>--}}
-{{--                                                </div>--}}
-{{--                                            </li>--}}
-                                        </div>
+
+                                        </div> --}}
                                         <!--news list-->
                                     </div>
                                     <!--news content-->
@@ -264,9 +244,9 @@
                                     <img src="assets/img/niyamimage.png" alt="niyam_image" class="img-fluid">
                                     <div class="news-content">
                                         <div class="news-title mt-3">
-                                            <h2 class="">नियम र नियमन</h2>
+                                            <a href="{{ route('rules.list') }}"> <h2>नियम र नियमन</h2> </a>
                                         </div>
-                                        <div class="div news_list">
+                                        {{-- <div class="div news_list">
                                             @foreach($rules as $key=>$rule)
 
                                                 <li class="">
@@ -288,7 +268,7 @@
                                                 </li>
                                                 @if($key == 2) @break @endif
                                             @endforeach
-                                        </div>
+                                        </div> --}}
 
                                     </div>
                                     <!--news content-->
