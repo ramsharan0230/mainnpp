@@ -59,6 +59,10 @@ Route::group(['prefix'=>'admin','middleware'=>['admin']],function(){
     Route::resource('/banner',\App\Http\Controllers\BannerController::class);
     Route::post('banner_status',[\App\Http\Controllers\BannerController::class,'bannerStatus'])->name('banner.status');
 
+    //Office Section
+    Route::resource('/offices',\App\Http\Controllers\OfficeController::class);
+    Route::post('office_status',[\App\Http\Controllers\OfficeController::class, 'officeStatus'])->name('office.status');
+
     //about section
     Route::get('about',[\App\Http\Controllers\AdminController::class,'about'])->name('about');
     Route::post('about-update',[\App\Http\Controllers\AdminController::class,'aboutUpdate'])->name('about.update');

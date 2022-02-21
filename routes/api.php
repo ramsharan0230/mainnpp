@@ -165,6 +165,10 @@ Route::get('/press-releases', [\App\Http\Controllers\Api\PressReleaseController:
 Route::get('/press-releases/{slug}', [\App\Http\Controllers\Api\PressReleaseController::class, 'getSpacificPressReleaseBySlug']);
 Route::get('/online-libraries', [\App\Http\Controllers\Api\OnlineLibraryController::class, 'index']);
 Route::get('/online-libraries/{slug}', [\App\Http\Controllers\Api\OnlineLibraryController::class, 'getSpacificLibraryBySlug']);
+
+Route::get('/offices', [\App\Http\Controllers\Api\OfficeController::class, 'index']);
+Route::get('/offices/{slug}', [\App\Http\Controllers\Api\OfficeController::class, 'getSpacificOfficeBySlug']);
+
 Route::get('/history', [\App\Http\Controllers\Api\HistoryController::class, 'getHistory']);
 Route::get('/history-images', [\App\Http\Controllers\Api\HistoryController::class, 'historyImage']);
 Route::get('/history-images/{slug}', [\App\Http\Controllers\Api\HistoryController::class, 'getSpacificHistoryImageBySlug']);

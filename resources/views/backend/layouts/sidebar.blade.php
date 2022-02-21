@@ -35,6 +35,15 @@
                     </ul>
                 </li>
 
+                {{-- office section --}}
+                <li class="{{request()->is('admin/offices') ? 'active' : ''}}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-home"></i><span>Office Section</span> </a>
+                    <ul>
+                        <li><a href="{{route('offices.index')}}">Offices</a></li>
+                        <li><a href="{{route('offices.create')}}">Add Office</a></li>
+                    </ul>
+                </li>
+                {{-- office section endd --}}
+
                 {{-- Online Library --}}
                 <li class="{{request()->is('admin/online-libraries') ? 'active' : ''}}"><a href="javascript:void(0);" class="has-arrow"><i class="icon-home"></i><span>Online Library</span> </a>
                     <ul>

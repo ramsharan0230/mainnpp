@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repo\OnlineLibraryInterface', 'App\Repo\Eloquent\OnlineLibraryRepo');
         $this->app->bind('App\Repo\HistoryInterface', 'App\Repo\Eloquent\HistoryRepo');
         $this->app->bind('App\Repo\HistoryImageInterface', 'App\Repo\Eloquent\HistoryImageRepo');
+        $this->app->bind('App\Repo\OfficeInterface', 'App\Repo\Eloquent\OfficeRepo');
     }
 
     /**

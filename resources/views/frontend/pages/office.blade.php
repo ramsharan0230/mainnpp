@@ -33,10 +33,16 @@
                     <div class="col-lg-10">
                         <div class="office-tab">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                                @forelse ($provinces as $key=>$province)
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-pardesh1-tab" data-toggle="pill" href="#pills-pardesh1" role="tab" aria-controls="pills-pardesh1" aria-selected="true">प्रदेश नं. १</a>
+                                    <a class="nav-link {{ $key==0?'active':''}}" id="pills-{{ $province->slug }}-tab" data-toggle="pill" href="#pills-{{ $province->slug }}" role="tab" aria-controls="pills-{{ $province->slug }}" aria-selected="true"> {{ $province->name }}</a>
                                 </li>
-                                <li class="nav-item">
+                                @empty
+                                    
+                                @endforelse
+                                
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" id="pills-pardesh2-tab" data-toggle="pill" href="#pills-pardesh2" role="tab" aria-controls="pills-pardesh2" aria-selected="false">प्रदेश नं. २</a>
                                 </li>
                                 <li class="nav-item">
@@ -53,575 +59,44 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="pills-pardesh7-tab" data-toggle="pill" href="#pills-pardesh7" role="tab" aria-controls="pills-pardesh7" aria-selected="false">  सुदूरपश्चिम प्रदेश  </a>
-                                </li>
+                                </li> --}}
 
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-pardesh1" role="tabpanel" aria-labelledby="pardesh1-tab">
+
+                                @forelse ($provinces as $key=>$province)
+                                <div class="tab-pane fade show {{ $key==0?'active':''}}" id="pills-{{ $province->slug }}" role="tabpanel" aria-labelledby="{{ $province->slug }}-tab">
                                     <div class="office">
                                         <div class="row">
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">  </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                        
-                                                    </p>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-lg-4 ">
+                                            @forelse ($province->offices as $office)
+                                            <div class="col-lg-6">
                                                 <div class="office-box d-flex justify-content-between">
                                                     <div class="div office-image">
-                                               
                                                     </div>
                                                 </div>
                                                 <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
+                                                    {{-- fire --}}
+                                                    <div class="alert alert-success" role="alert">
+                                                        <h4 class="alert-heading">{{ $office->name }}</h4>
+                                                        <hr>
+                                                        <p class="mb-0">Telephone: {{ $office->telephone }}</p>
+                                                    </div>
+                                                    {{-- fire edd --}}
                                                 </div>
                                             </div>
+                                            @empty
+                                                
+                                            @endforelse
+                                            
 
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                    
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                      
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                 
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">  </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
 
                                         </div><!--inner row-->
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-pardesh2" role="tabpanel" aria-labelledby="pardesh2-tab">
-                                    <div class="office">
-                                        <div class="row">
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                      
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">  </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                        
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                    
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                      
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                        
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div><!--inner row-->
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="pills-pardesh3" role="tabpanel" aria-labelledby="pardesh3-tab">
-                                    <div class="office">
-                                        <div class="row">
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                     
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                     
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                      
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                     
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                      
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">  </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                      
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div><!--inner row-->
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="pills-pardesh4" role="tabpanel" aria-labelledby="pardesh4-tab">
-                                    <div class="office">
-                                        <div class="row">
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                      
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                      
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div><!--inner row-->
-                                    </div>
-
-                                </div>
-                                <div class="tab-pane fade" id="pills-pardesh5" role="tabpanel" aria-labelledby="pardesh5-tab">
-                                    <div class="office">
-                                        <div class="row">
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                      
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                     
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div><!--inner row-->
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="pills-pardesh6" role="tabpanel" aria-labelledby="pardesh6-tab">
-                                    <div class="office">
-                                        <div class="row">
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                     
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                    
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                     
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                     
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">    </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">    </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                      
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div><!--inner row-->
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="pills-pardesh7" role="tabpanel" aria-labelledby="pardesh7-tab">
-                                    <div class="office">
-                                        <div class="row">
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                      
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">    </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                     
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">  </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                      
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">    </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                       
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 mt-3 ">
-                                                <div class="office-box d-flex justify-content-between">
-                                                    <div class="div office-image">
-                                                       
-                                                    </div>
-                                                </div>
-                                                <div class="office-info ">
-                                                    <h5 class="text-center">   </h5>
-                                                    <p class="text-center">
-                                                        नेश्नलिष्ट पिपल्स पार्टी<br>
-                                                          </p>
-                                                </div>
-                                            </div>
-
-                                        </div><!--inner row-->
-                                    </div>
-                                </div>
+                                @empty
+                                    
+                                @endforelse
                             </div>
 
                         </div>

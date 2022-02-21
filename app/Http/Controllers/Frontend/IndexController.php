@@ -40,6 +40,8 @@ use App\Models\SuccessStory;
 use App\Models\Technology;
 use App\Models\Testimonial;
 use App\Models\Vacancy;
+use App\Models\Office;
+use App\Models\Province as Pro;
 use App\Models\OnlineLibrary;
 use App\Models\VacancyApplication;
 use Illuminate\Http\Request;
@@ -101,7 +103,9 @@ class IndexController extends Controller
 
     //office
     public function office(){
-        return view('frontend.pages.office');
+        $offices = Office::where('publish', 1)->get();
+        $provinces = Pro::where('publish', 1)->get();
+        return view('frontend.pages.office', compact('offices', 'provinces'));
     }
 
 
