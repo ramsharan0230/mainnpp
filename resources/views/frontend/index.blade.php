@@ -161,36 +161,36 @@
                                         <div class="news-title mt-3">
                                             <a href="{{ route('news.event') }}"><h2 class="">सूचना तथा समाचार</h2></a>
                                         </div>
-                                        {{-- <div class="div news_list">
-                                            @foreach($news as $key=>$newsletter)
+                                        <!--<div class="div news_list">-->
+                                        <!--    @foreach($news as $key=>$newsletter)-->
 
-                                                <li class="">
-                                                    <a href="" class="">
-                                                        {{$newsletter->title}}
-                                                        <i class="icofont-rounded-right float-right"></i>
-                                                    </a>
-                                                    <p> {!! \Illuminate\Support\Str::limit($newsletter->news_detail, 60, $end='...') !!}</p>
-                                                    <div class="views-field views-field-created">
-                                                        <span class="views-label views-label-created">Post date: </span>
-                                                        <span class="field-content"><em class="placeholder">{{$newsletter->created_at->diffForHumans()}}</em></span>
-                                                    </div>
+                                        <!--        <li class="">-->
+                                        <!--            <a href="" class="">-->
+                                        <!--                {{$newsletter->title}}-->
+                                        <!--                <i class="icofont-rounded-right float-right"></i>-->
+                                        <!--            </a>-->
+                                        <!--            <p> {!! \Illuminate\Support\Str::limit($newsletter->news_detail, 60, $end='...') !!}</p>-->
+                                        <!--            <div class="views-field views-field-created">-->
+                                        <!--                <span class="views-label views-label-created">Post date: </span>-->
+                                        <!--                <span class="field-content"><em class="placeholder">{{$newsletter->created_at->diffForHumans()}}</em></span>-->
+                                        <!--            </div>-->
 
-                                                    <div class="read-more d-flex justify-content-end mt-3">
-                                                        <a href="{{route('news.detail',$newsletter->id)}}" class="btn-learn-more">थप पढ्नुहोस्
-                                                            <i class="icofont-double-right"></i>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                                @if($key == 2) @break @endif
+                                        <!--            <div class="read-more d-flex justify-content-end mt-3">-->
+                                        <!--                <a href="{{route('news.detail',$newsletter->id)}}" class="btn-learn-more">थप पढ्नुहोस्-->
+                                        <!--                    <i class="icofont-double-right"></i>-->
+                                        <!--                </a>-->
+                                        <!--            </div>-->
+                                        <!--        </li>-->
+                                        <!--        @if($key == 2) @break @endif-->
 
-                                            @endforeach
-                                        </div> --}}
+                                        <!--    @endforeach-->
+                                        <!--</div>-->
                                         <!--news list-->
-                                        {{-- <div class="read-more d-flex justify-content-end mt-3">
-                                            <a href="#" class="btn-learn-more">थप पढ्नुहोस्
-                                                <i class="icofont-double-right"></i>
-                                            </a>
-                                        </div> --}}
+                                        <!--<div class="read-more d-flex justify-content-end mt-3">-->
+                                        <!--    <a href="#" class="btn-learn-more">थप पढ्नुहोस्-->
+                                        <!--        <i class="icofont-double-right"></i>-->
+                                        <!--    </a>-->
+                                        <!--</div>-->
                                     </div>
                                     <!--news content-->
                                 </div>
@@ -203,8 +203,7 @@
                                     <img src="assets/img/press.png" alt="press_image" class="img-fluid">
                                     <div class="news-content">
                                         <div class="news-title mt-3">
-                                            {{-- <h2 class="">प्रेस विज्ञप्ती </h2> --}}
-                                            <a href="{{ route('press.release') }}"> <h2>प्रेस विज्ञप्ती</h2> </a>
+                                             <a href="{{ route('press.release') }}"> <h2>प्रेस विज्ञप्ती</h2> </a></h2>
                                         </div>
                                         {{-- <div class="div news_list">
                                             @foreach($goals as $key=>$goal)
@@ -351,25 +350,29 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-10">
                         @foreach($news as $key=>$newsletter)
-
                         <div class="owl-carousel social-media-slider owl-theme">
                                 <div class="item">
                                 <div class="row">
                                     <div class="col-lg-4 mt-5">
                                         <div class="content-left">
-{{--                                            <h6 class="">वीपी नगर </h6>--}}
-                                            <p class="">{{$newsletter->title}}
-                                            </p>
+                                            <a href="{{ route('newsletters.detail', $newsletter->slug) }}">
+                                                <p class="card-text" style="color:white">{{$newsletter->title}}</p>
+                                            </a>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-lg-4 mt-3 ">
-                                        <img src="{{asset($newsletter->banner)}}" alt="" class="">
+                                        <a href="{{ route('newsletters.detail', $newsletter->slug) }}">
+                                            <img src="{{asset($newsletter->banner)}}" alt="" class="">
+                                        </a>
 
                                     </div>
                                     <div class="col-lg-4 mt-5 pt-3">
                                         <div class="content-right d-flex ">
-                                            <h6 class="">१३</h6>
-                                            <p> {!! \Illuminate\Support\Str::limit($newsletter->news_detail, 60, $end='...') !!}</p>
+                                            <h6 class="">{{ $newsletter->created_at->format('d') }}</h6>
+                                            <a href="{{ route('newsletters.detail', $newsletter->slug) }}">
+                                                <p style="color:white">{!! \Illuminate\Support\Str::limit($newsletter->news_detail, 60, $end='...') !!}</p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -405,9 +408,12 @@
                                     <img src="{{asset($event->banner)}}" alt="" class="img-fluid">
                                     <div class="image-text-wrapper">
                                         <div class="program-info mt-3">
-                                            <h6 class="text-center">  {{$event->title}} </h6>
-                                            <p class="text-center">
-                                                {!! \Illuminate\Support\Str::limit($event->news_detail, 60, $end='...') !!}                                            </p>
+                                            <a href="{{ route('news.detail', $event->slug) }}">
+                                                <h6 class="text-center">  {{$event->title}} </h6>
+                                                <p class="text-center">
+                                                    {!! \Illuminate\Support\Str::limit($event->news_detail, 60, $end='...') !!}     
+                                                </p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

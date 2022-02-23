@@ -61,7 +61,10 @@ Route::get('blog-single/{slug}',[\App\Http\Controllers\Frontend\IndexController:
 
 //News & Event detail
 Route::get('news-event',[\App\Http\Controllers\Frontend\IndexController::class,'newsEvent'])->name('news.event');
-Route::get('news-detail/{id}',[\App\Http\Controllers\Frontend\IndexController::class,'newsDetail'])->name('news.detail');
+Route::get('news-detail/{slug}',[\App\Http\Controllers\Frontend\IndexController::class,'newsDetail'])->name('news.detail');
+
+////Newsletters detail
+Route::get('newsletters/{slug}',[\App\Http\Controllers\Frontend\IndexController::class,'newsDetail'])->name('newsletters.detail');
 
 //Rules detail
 Route::get('rules',[\App\Http\Controllers\Frontend\IndexController::class,'Ruleslist'])->name('rules.list');

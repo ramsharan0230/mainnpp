@@ -22,10 +22,12 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="content-right d-flex ">
-                                    <h6 class="">१३</h6>
+                                    <h6 class="">{{ $news->created_at }}</h6>
                                     <p class="">
                                         नेपालको एकमात्र <br>
                                         जिल्लाको रुपमा परिचित
+                                        <br>
+                                        <a href="{{ route('news.event') }}" class="btn btn-primary btn-sm">Back</a>
                                     </p>
                                 </div>
 
